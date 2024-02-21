@@ -50,6 +50,23 @@ export default class Board extends React.Component {
       status: companyDetails[3],
     }));
   }
+
+  handleDrop = (el, target, source) => {
+    const cardStatus = el.dataset.status;
+  
+    // Remove old swimlane class
+    el.classList.remove(`card-${cardStatus}`);
+  
+    // Add corresponding "color" class
+    const newStatus = target.getElementsByClassName('Card')[0].getAttribute('data-status');
+    console.log(newStatus)
+    el.classList.add(`card-${newStatus}`);
+  };
+  
+  componentDidMount(){
+    Dragula(Array.from(document.getElementsByClassName('Swimlane-dragColumn'))).on('drop', this.handleDrop)
+    }
+
   renderSwimlane(name, clients, ref) {
     return (
       <Swimlane name={name} clients={clients} dragulaRef={ref}/>

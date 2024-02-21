@@ -1,3 +1,23 @@
 .Board {
   margin-top: 12px;
 }
+
+.card-backlog {
+  /* styles for backlog cards */
+  background-color: rgba(167, 158, 158, 0.671);
+  color: black;
+}
+.card-in-progress {
+  /* styles for in-progress cards */
+  background-color: skyblue;
+  color: white;
+}
+.card-complete {
+  /* styles for completed cards */
+  background-color: rgb(150, 190, 150);
+  color: white;
+}
+.card-highlight {
+  background-color: red;
+}
+
